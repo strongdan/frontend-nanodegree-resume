@@ -9,15 +9,15 @@ var bio = {
 	"name" : "Daniel Strong",
 	"role" : "Web Developer",
 	"contacts" : {
-    "mobile" : "907-209-0409",
-    "email" : "danielstrong@mac.com",
-    "github" : "strongdan",
-    "twitter" : "@danstrong",
-    "location" : "Juneau, AK"
-  },
+        "mobile" : "907-209-0409",
+        "email" : "danielstrong@mac.com",
+        "github" : "strongdan",
+        "twitter" : "@danstrong",
+        "location" : "Juneau, AK"
+                  },
 	"welcome message" : "Hi there!",
 	"skills" : ["HTML", "CSS", "JS", "Python", "Ruby"],
-  "bioPic" : "images/fry.jpg"
+    "bioPic" : "images/fry.jpg"
 };
 
 // education contains an array of schools. Each school object in schools contains a name,
@@ -32,7 +32,8 @@ var education = {
   	"degree": "BS",
   	"major": "Marine Biology"
 },
-  { 	"name": "University of Alaska Fairbanks",
+  { 
+    "name": "University of Alaska Fairbanks",
   	"city": "Fairbanks, AK",
   	"degree": "masters",
   	"major": "Interdisciplinary Studies"
@@ -42,24 +43,24 @@ var education = {
 
 //work contains an array of jobs
 // Each job object in jobs should contain an employer, title, location, dates worked and description.
-var work = {
+var workExperience = {
   "jobs": [
     {
-    	"employer: "State of Alaska",
+      "employer: 'State of Alaska',
       "title": "Research Analyst",
       "location": "Juneau",
       "dates worked": "2013-2016,
-    	"description": "Update database and do research for publication"
+      "description": "Update database and do research for publication"
     },
     {
-    	"employer: "State of Alaska",
+    	"employer: 'State of Alaska',
       "title": "Research Analyst",
       "location": "Juneau",
       "dates worked": "2012-2013,
     	"description": "Migrate to new database, conduct surveys"
     },
     {
-    	"employer: "Sealaska Heritage Institute",
+    	"employer: 'Sealaska Heritage Institute',
       "title": "Research Associate",
       "location": "Juneau",
       "dates worked": "2009-2012,
@@ -93,3 +94,30 @@ var projects = {
 //$("#header").prepend(formattedName);
 
 //$("#header").append(formattedRole);
+
+// checks whether skills in bio object
+if (bio.skills.length > 0 ) {
+    
+    $("#header").append(HTMLskillsStart);
+        
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills).append(formattedSkill);
+    
+    formattedSkill = HTMLskills.replace("%data%"), bio.skills[1])
+    $("#skills).append(formattedSkill);
+    
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[2])
+    $("#skills).append(formattedSkill);
+    
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[3])
+    $("#skills).append(formattedSkill);
+    
+}
+
+for (job in work.jobs) {
+     $("#workExperience).append(HTMLworkStart);
+     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer;
+     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title;
+     var formattedEmployerTitle = formattedEmployer + formattedTitle;
+     $("#.work-entry:last").append(formattedEmployerTitle);
+}
